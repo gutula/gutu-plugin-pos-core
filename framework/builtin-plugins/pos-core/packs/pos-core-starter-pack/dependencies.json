@@ -1,0 +1,20 @@
+{
+  "plugin": "pos-core",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "sales-core",
+    "pricing-tax-core",
+    "inventory-core",
+    "traceability-core"
+  ],
+  "requiredCapabilities": [
+    "ui.register.admin",
+    "api.rest.mount",
+    "data.write.pos",
+    "events.publish.pos"
+  ]
+}

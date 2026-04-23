@@ -1,0 +1,10 @@
+{
+  "automationId": "pos-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "pos.reconciliation.run",
+  "queues": [
+    "offline-sync-conflicts",
+    "cashier-variance-review",
+    "duplicate-receipt-replay"
+  ]
+}

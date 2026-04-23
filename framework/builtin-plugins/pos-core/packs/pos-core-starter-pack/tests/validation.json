@@ -1,0 +1,25 @@
+{
+  "packageId": "pos-core",
+  "packName": "pos-core-starter-pack",
+  "expectedActions": [
+    "pos.sessions.open",
+    "pos.receipts.record",
+    "pos.sessions.close"
+  ],
+  "expectedResources": [
+    "pos.sessions",
+    "pos.receipts",
+    "pos.reconciliation"
+  ],
+  "expectedReports": [
+    "POS Shift Summary",
+    "Cashier Variance",
+    "POS Closing Summary",
+    "Offline Sync Exceptions"
+  ],
+  "expectedExceptionQueues": [
+    "offline-sync-conflicts",
+    "cashier-variance-review",
+    "duplicate-receipt-replay"
+  ]
+}

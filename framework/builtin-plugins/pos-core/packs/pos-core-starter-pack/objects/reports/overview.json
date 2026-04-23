@@ -1,0 +1,20 @@
+{
+  "pluginId": "pos-core",
+  "reports": [
+    "POS Shift Summary",
+    "Cashier Variance",
+    "POS Closing Summary",
+    "Offline Sync Exceptions"
+  ],
+  "exceptionQueues": [
+    "offline-sync-conflicts",
+    "cashier-variance-review",
+    "duplicate-receipt-replay"
+  ],
+  "operationalScenarios": [
+    "register-open-to-close",
+    "offline-sale-replay",
+    "refund-or-exchange",
+    "cashier-close-reconciliation"
+  ]
+}

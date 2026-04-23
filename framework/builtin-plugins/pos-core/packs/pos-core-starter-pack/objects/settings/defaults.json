@@ -1,0 +1,9 @@
+{
+  "workspace": "pos",
+  "route": "/admin/business/pos",
+  "pageTitle": "POS Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}

@@ -1,0 +1,9 @@
+{
+  "workflowId": "pos-session-lifecycle",
+  "actors": [
+    "cashier",
+    "store-manager",
+    "controller"
+  ],
+  "description": "Open, trade, reconcile, sync, and close POS sessions."
+}
