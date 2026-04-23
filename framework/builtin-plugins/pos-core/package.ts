@@ -24,7 +24,6 @@ export default definePackage({
     "workflow-core",
     "sales-core",
     "pricing-tax-core",
-    "inventory-core",
     "traceability-core"
   ],
   "dependencyContracts": [
@@ -64,17 +63,64 @@ export default definePackage({
       "rationale": "Required for POS Core to keep its boundary governed and explicit."
     },
     {
-      "packageId": "inventory-core",
+      "packageId": "traceability-core",
       "class": "required",
       "rationale": "Required for POS Core to keep its boundary governed and explicit."
     },
     {
-      "packageId": "traceability-core",
-      "class": "required",
-      "rationale": "Required for POS Core to keep its boundary governed and explicit."
+      "packageId": "inventory-core",
+      "class": "optional",
+      "rationale": "Recommended with POS Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "accounting-core",
+      "class": "optional",
+      "rationale": "Recommended with POS Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "crm-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves POS Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "procurement-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves POS Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "analytics-bi-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves POS Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "integration-only",
+      "rationale": "Only needed when POS Core must exchange data or actions with adjacent or external surfaces."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "inventory-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "crm-core",
+    "procurement-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-retail"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "POS can operate without Inventory for limited service retail, but physical goods deployments should treat Inventory and Accounting as production recommendations."
+  ],
+  "optionalWith": [
+    "inventory-core",
+    "accounting-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "pos.sessions",

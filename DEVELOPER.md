@@ -53,7 +53,12 @@ Owns POS sessions, receipt journals, and sync or closeout exception state while 
 
 | Field | Value |
 | --- | --- |
-| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `sales-core`, `pricing-tax-core`, `inventory-core`, `traceability-core` |
+| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `sales-core`, `pricing-tax-core`, `traceability-core` |
+| Recommended Plugins | `inventory-core`, `accounting-core` |
+| Capability Enhancing | `crm-core`, `procurement-core`, `analytics-bi-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `sector-retail` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.pos`, `events.publish.pos` |
 | Provides Capabilities | `pos.sessions`, `pos.receipts`, `pos.reconciliation` |
 | Owns Data | `pos.sessions`, `pos.receipts`, `pos.cashier-shifts`, `pos.reconciliation` |

@@ -8,9 +8,24 @@
     "workflow-core",
     "sales-core",
     "pricing-tax-core",
-    "inventory-core",
     "traceability-core"
   ],
+  "recommendedPlugins": [
+    "inventory-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "crm-core",
+    "procurement-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-retail"
+  ],
+  "standaloneSupported": true,
   "requiredCapabilities": [
     "ui.register.admin",
     "api.rest.mount",

@@ -196,7 +196,7 @@ Forbidden shortcuts:
 
 ## Cross-package interactions
 
-- Direct dependencies: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `sales-core`, `pricing-tax-core`, `inventory-core`, `traceability-core`
+- Direct dependencies: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `sales-core`, `pricing-tax-core`, `traceability-core`
 - Requested capabilities: `ui.register.admin`, `api.rest.mount`, `data.write.pos`, `events.publish.pos`
 - Integration model: Actions+Resources+Jobs+Workflows+UI
 - ERPNext doctypes used as parity references: `POS Profile`, `POS Settings`, `POS Opening Entry`, `POS Closing Entry`, `POS Invoice`, `Cashier Closing`

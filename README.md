@@ -60,12 +60,27 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Package | `@plugins/pos-core` |
 | Manifest ID | `pos-core` |
 | Repo | [gutu-plugin-pos-core](https://github.com/gutula/gutu-plugin-pos-core) |
-| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `sales-core`, `pricing-tax-core`, `inventory-core`, `traceability-core` |
+| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `sales-core`, `pricing-tax-core`, `traceability-core` |
+| Recommended Plugins | `inventory-core`, `accounting-core` |
+| Capability Enhancing | `crm-core`, `procurement-core`, `analytics-bi-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `sector-retail` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.pos`, `events.publish.pos` |
 | Provided Capabilities | `pos.sessions`, `pos.receipts`, `pos.reconciliation` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `sales-core`, `pricing-tax-core`, `traceability-core`
+- Recommended plugins: `inventory-core`, `accounting-core`
+- Capability-enhancing plugins: `crm-core`, `procurement-core`, `analytics-bi-core`
+- Integration-only plugins: `business-portals-core`
+- Suggested packs: `sector-retail`
+- Standalone supported: yes
+- POS can operate without Inventory for limited service retail, but physical goods deployments should treat Inventory and Accounting as production recommendations.
 
 ## Capability Matrix
 

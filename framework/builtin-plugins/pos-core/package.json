@@ -37,7 +37,6 @@
     "@plugins/workflow-core": "workspace:*",
     "@plugins/sales-core": "workspace:*",
     "@plugins/pricing-tax-core": "workspace:*",
-    "@plugins/inventory-core": "workspace:*",
     "@plugins/traceability-core": "workspace:*"
   }
 }

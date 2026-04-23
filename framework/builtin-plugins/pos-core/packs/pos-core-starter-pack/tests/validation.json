@@ -1,6 +1,31 @@
 {
   "packageId": "pos-core",
   "packName": "pos-core-starter-pack",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "sales-core",
+    "pricing-tax-core",
+    "traceability-core"
+  ],
+  "recommendedPlugins": [
+    "inventory-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "crm-core",
+    "procurement-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-retail"
+  ],
   "expectedActions": [
     "pos.sessions.open",
     "pos.receipts.record",
