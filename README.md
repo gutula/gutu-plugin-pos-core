@@ -26,7 +26,7 @@ Retail session, till state, receipt journals, cashier shifts, and offline-tolera
 
 Owns POS sessions, receipt journals, and sync or closeout exception state while handing settled stock and finance effects downstream explicitly.
 
-- Exports 3 governed actions: `pos.sessions.open`, `pos.receipts.record`, `pos.sessions.close`.
+- Exports 7 governed actions: `pos.sessions.open`, `pos.receipts.record`, `pos.sessions.close`, `pos.sessions.hold`, `pos.sessions.release`, `pos.sessions.amend`, `pos.sessions.reverse`.
 - Owns 3 resource contracts: `pos.sessions`, `pos.receipts`, `pos.reconciliation`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `pos.sessions.open`, `pos.receipts.record`, `pos.sessions.close` |
+| Actions | 7 | `pos.sessions.open`, `pos.receipts.record`, `pos.sessions.close`, `pos.sessions.hold`, `pos.sessions.release`, `pos.sessions.amend`, `pos.sessions.reverse` |
 | Resources | 3 | `pos.sessions`, `pos.receipts`, `pos.reconciliation` |
 | Jobs | 2 | `pos.projections.refresh`, `pos.reconciliation.run` |
 | Workflows | 1 | `pos-session-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/pos-core";
+import { manifest, openPosSessionAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/pos-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(openPosSessionAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

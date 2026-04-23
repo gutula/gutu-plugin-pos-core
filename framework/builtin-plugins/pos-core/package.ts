@@ -97,7 +97,11 @@ export default definePackage({
   "publicCommands": [
     "pos.sessions.open",
     "pos.receipts.record",
-    "pos.sessions.close"
+    "pos.sessions.close",
+    "pos.sessions.hold",
+    "pos.sessions.release",
+    "pos.sessions.amend",
+    "pos.sessions.reverse"
   ],
   "publicQueries": [
     "pos.shift-summary",

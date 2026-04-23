@@ -9,6 +9,10 @@
 | pos.sessions.open | Open POS Session |
 | pos.receipts.record | Record POS Receipt |
 | pos.sessions.close | Close POS Session |
+| pos.sessions.hold | Place Record On Hold |
+| pos.sessions.release | Release Record Hold |
+| pos.sessions.amend | Amend Record |
+| pos.sessions.reverse | Reverse Record |
 | pos.projections.refresh | Job definition queued on `pos-projections`. |
 | pos.reconciliation.run | Job definition queued on `pos-reconciliation`. |
 | pos-session-lifecycle | Open, trade, reconcile, sync, and close POS sessions. |

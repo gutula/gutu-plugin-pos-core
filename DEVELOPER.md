@@ -71,6 +71,10 @@ Owns POS sessions, receipt journals, and sync or closeout exception state while 
 | Action | `pos.sessions.open` | Permission: `pos.sessions.write` | Open POS Session<br>Idempotent<br>Audited |
 | Action | `pos.receipts.record` | Permission: `pos.receipts.write` | Record POS Receipt<br>Non-idempotent<br>Audited |
 | Action | `pos.sessions.close` | Permission: `pos.sessions.write` | Close POS Session<br>Non-idempotent<br>Audited |
+| Action | `pos.sessions.hold` | Permission: `pos.sessions.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `pos.sessions.release` | Permission: `pos.sessions.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `pos.sessions.amend` | Permission: `pos.sessions.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `pos.sessions.reverse` | Permission: `pos.sessions.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `pos.sessions` | Portal disabled | Store or register session lifecycle with cashier and shift metadata.<br>Purpose: Own high-speed retail session truth without collapsing stock and finance into the till runtime.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `pos.receipts` | Portal disabled | Receipt and retail transaction journals for settled POS activity.<br>Purpose: Persist front-counter execution safely before downstream settlement applies.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `pos.reconciliation` | Portal disabled | Offline replay, duplicate prevention, and cashier reconciliation queues.<br>Purpose: Expose POS sync and closeout exceptions instead of hiding them in local device state.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/pos-core";
+import { manifest, openPosSessionAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/pos-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  openPosSessionAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/pos-core";
+import { manifest, openPosSessionAction } from "@plugins/pos-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", openPosSessionAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `pos.sessions.open`, `pos.receipts.record`, `pos.sessions.close`.
+- Exports 7 governed actions: `pos.sessions.open`, `pos.receipts.record`, `pos.sessions.close`, `pos.sessions.hold`, `pos.sessions.release`, `pos.sessions.amend`, `pos.sessions.reverse`.
 - Owns 3 resource contracts: `pos.sessions`, `pos.receipts`, `pos.reconciliation`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

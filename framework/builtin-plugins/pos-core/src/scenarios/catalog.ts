@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "pos.sessions.open",
       "pos.receipts.record",
-      "pos.sessions.close"
+      "pos.sessions.close",
+      "pos.sessions.hold",
+      "pos.sessions.release",
+      "pos.sessions.amend",
+      "pos.sessions.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -26,7 +30,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "pos.sessions.open",
       "pos.receipts.record",
-      "pos.sessions.close"
+      "pos.sessions.close",
+      "pos.sessions.hold",
+      "pos.sessions.release",
+      "pos.sessions.amend",
+      "pos.sessions.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -46,7 +54,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "pos.sessions.open",
       "pos.receipts.record",
-      "pos.sessions.close"
+      "pos.sessions.close",
+      "pos.sessions.hold",
+      "pos.sessions.release",
+      "pos.sessions.amend",
+      "pos.sessions.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -66,7 +78,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "pos.sessions.open",
       "pos.receipts.record",
-      "pos.sessions.close"
+      "pos.sessions.close",
+      "pos.sessions.hold",
+      "pos.sessions.release",
+      "pos.sessions.amend",
+      "pos.sessions.reverse"
     ],
     "downstreamTargets": {
       "create": [],
